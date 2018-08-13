@@ -55,27 +55,66 @@
                     <connections>
                         <outlet property="passwordTextField" destination="RSl-3f-jAB" id="KrI-cX-zIl"/>
                         <outlet property="usernameTextField" destination="Muf-7s-iTr" id="sNU-mb-M9h"/>
-                        <segue destination="V2j-Ye-4ls" kind="presentation" identifier="loginSegue" id="5FP-Pi-58E"/>
+                        <segue destination="qXN-dZ-KBM" kind="presentation" identifier="LoginSegue" id="ECg-yL-1yS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="794-4E-IVG">
+        <!--Chat View Controller-->
+        <scene sceneID="8bY-NT-ka0">
             <objects>
-                <viewController id="V2j-Ye-4ls" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Hpu-4S-QkG">
+                <viewController id="VQi-x5-FdV" customClass="ChatViewController" customModule="ParseChatServer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WgG-5F-XOO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PxU-JL-dmY">
+                                <rect key="frame" x="0.0" y="64" width="284" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xs9-iS-Rzb">
+                                <rect key="frame" x="282" y="64" width="93" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendPressed:" destination="VQi-x5-FdV" eventType="touchUpInside" id="jWi-gu-w42"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="e1d-8u-Qhm"/>
+                        <viewLayoutGuide key="safeArea" id="rI6-Ll-Jrb"/>
                     </view>
+                    <navigationItem key="navigationItem" id="VOB-6R-Kh3"/>
+                    <connections>
+                        <outlet property="messageField" destination="PxU-JL-dmY" id="8xj-8a-myC"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QTW-oM-Bwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JKG-UU-UY3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="846" y="134"/>
+            <point key="canvasLocation" x="1621.5999999999999" y="112.89355322338831"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MhN-aQ-uN8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qXN-dZ-KBM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7ZP-pM-tMW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VQi-x5-FdV" kind="relationship" relationship="rootViewController" id="mQV-fe-hYs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TIJ-u0-9XE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866" y="113"/>
         </scene>
     </scenes>
 </document>

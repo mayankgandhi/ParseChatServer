@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
             if user != nil
             {
                 print("you have successfully signed in")
-                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                self.performSegue(withIdentifier: "LoginSegue", sender: nil)
             }
             else
             {
